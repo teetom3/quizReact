@@ -1,0 +1,17 @@
+import { useState } from "react";
+import QuizAccordion from "./components/QuizAccordion";
+
+import "./App.css";
+
+function App() {
+  // Petit module à importer là où vous affichez le quiz
+
+  return (
+    <>
+      <h1>Quiz interactif</h1>
+      <QuizAccordion></QuizAccordion>
+    </>
+  );
+}
+
+export default App;
