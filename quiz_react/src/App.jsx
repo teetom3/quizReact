@@ -1,6 +1,6 @@
 import { useState } from "react";
 import QuizAccordion from "./components/QuizAccordion";
-
+import { FilterQuiz } from "./components/FilterQuiz";
 import "./App.css";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
   return (
     <>
       <h1>Quiz interactif</h1>
+      <FilterQuiz/>
       <QuizAccordion></QuizAccordion>
     </>
   );

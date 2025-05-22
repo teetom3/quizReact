@@ -24,7 +24,7 @@ export const initialState = {
   ],
 };
 
-export const quizzReducer = (state, action) => {
+export const quizReducer = (state, action) => {
   switch (action.type) {
     case "VALIDATE_ANSWER":
       return {
@@ -34,19 +34,18 @@ export const quizzReducer = (state, action) => {
         //trouvé la question dans initialstate avec le meme id que celle cliqué
 
         questions: state.questions.map((question) => {
-          if ((question.id = action.payload.id)) {
+          if (question.validation === null   && question.id === action.payload.id) {
             return {
               ...question,
 
-              question: action.payload.validation,
+              validation: action.payload.validation,
             };
           } else {
-            return {
-              state,
-            };
+            return question;
           }
         }),
-        //passer sa valeur validation à true
       };
+    default:
+      return state;
   }
 };

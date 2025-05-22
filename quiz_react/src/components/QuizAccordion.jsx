@@ -5,16 +5,16 @@ import { QuizContext } from "../context/QuizContext";
 
 export default function QuizAccordion() {
   const { questions } = useContext(QuizContext);
+
+  
   return (
     <Accordion defaultActiveKey="0">
       {questions.map((question) => (
         <QuestionItem
           key={question.id}
           eventKey={question.id.toString()}
-          category={question.category}
-          question={question.question}
-          answer={question.answer}
-          validation={question.validation}
+          question={question}
+          
         />
       ))}
     </Accordion>
